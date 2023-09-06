@@ -1,0 +1,28 @@
+<section>
+    <div *ngIf="!showResult">
+        <div *ngFor="let item of quiz; let in = index">
+            <h2>Q.{{in}}  - {{item.question}}</h2>
+            <div class="container">
+                <div *ngFor="let answer of item.answer" class="answer">
+                    <button (click)="selectAnswer(answer, in)" [class.selected]="isAnswerSelected(answer, in)">{{answer}}</button>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="validForm" class="container">
+            <button (click)="onSubmit()" class="valider">Valider</button>
+        </div>
+    </div>
+    <div>
+        <div *ngIf="showResult">
+            <div class="container">
+                <h2>Résultat</h2>
+                <div class="flex-box">
+                    <div class="result">
+                        <p>Nombre de bonnes réponses : {{score}}</p>
+                        <p>Nombre de mauvaises réponses : {{quiz.length - score}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
