@@ -1,7 +1,66 @@
 /* You can add global styles to this file, and also import other style files */
-body{
-    background-color: #D6D1B1;
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&family=Nunito:wght@800&display=swap');
+
+html, body { 
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { 
+    background-color: var(--background-color);
+    font-family: 'Nunito', sans-serif;
+}
+
+:root {
+    --background-color: #FFF7EA;
+    --text-color: #A31B1E;
+    --primary-color: #c13b34;
+    --secondary-color: #fbb5bf;
+}
+
+.primary-color {
+    color: var(--primary-color);
+}
+
+.secondary-color {
+    color: var(--secondary-color);
+}
+
+.text-color {
+    color: var(--text-color);
+}
+
+.center{
+    text-align: center;
+    margin: auto;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.wrapper {
+    /* display: flex;
+    flex-direction: column;
+    min-height: 100%; */
+    
+    position: relative;
+    min-height: 100%;
+}
+
+input, textarea {
+    background-color: var(--secondary-color);
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 5px;
+}
+
+input::placeholder, textarea::placeholder {
+    color: var(--primary-color);
+}
+
+input:focus, textarea:focus {
+    outline: var(--primary-color) auto 1px;
+}

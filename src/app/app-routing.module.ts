@@ -9,7 +9,27 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
+    path: 'sign-in',
+    component: QuizzcardComponent,
+  },
+  {
+    path: 'sign-up',
+    component: QuizzcardComponent,
+  },
+  {
+    path: 'profile',
+    component: QuizzcardComponent,
+  },
+  {
     path: 'quizz',
+    component: QuizzcardComponent,
+  },
+  {
+    path: 'quizz/:id',
+    component: QuizzcardComponent,
+  },
+  {
+    path: 'quizz/:id/scoring',
     component: QuizzcardComponent,
   },
 ];
