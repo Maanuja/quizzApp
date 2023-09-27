@@ -1,0 +1,64 @@
+{
+    "quiz": [
+        {
+            "questionId": 1,
+            "question": "What is the capital of France?",
+            "answer": ["Paris", "Lyon", "Marseille", "Toulouse"],
+            "correctanswer": "Paris"
+        },
+        {
+            "questionId": 2,
+            "question": "What is the capital of Spain?",
+            "answer": ["Madrid", "Barcelona", "Valencia", "Seville"],
+            "correctanswer": "Madrid"
+        },
+        {
+            "questionId": 3,
+            "question": "What is the capital of Italy?",
+            "answer": ["Turin", "Milan", "Naples", "Rome"],
+            "correctanswer": "Rome"
+        },
+        {
+            "questionId": 4,
+            "question": "What is the capital of Germany?",
+            "answer": ["Berlin", "Hamburg", "Munich", "Cologne"],
+            "correctanswer": "Berlin"
+        },
+        {
+            "questionId": 5,
+            "question": "What is the capital of Portugal?",
+            "answer": ["Porto", "Lisbon", "Braga", "Faro"],
+            "correctanswer": "Lisbon"
+        },
+        {
+            "questionId": 6,
+            "question": "What is the capital of Belgium?",
+            "answer": ["Brussels", "Antwerp", "Ghent", "Charleroi"],
+            "correctanswer": "Brussels"
+        },
+        {
+            "questionId": 7,
+            "question": "What is the capital of Netherlands?",
+            "answer": ["Rotterdam", "Amsterdam", "The Hague", "Utrecht"],
+            "correctanswer": "Amsterdam"
+        },
+        {
+            "questionId": 8,
+            "question": "What is the capital of Switzerland?",
+            "answer": ["Bern", "Zurich", "Geneva", "Basel"],
+            "correctanswer": "Bern"
+        },
+        {
+            "questionId": 9,
+            "question": "What is the capital of Austria?",
+            "answer": ["Graz", "Linz", "Vienna", "Salzburg"],
+            "correctanswer": "Vienna"
+        },
+        {
+            "questionId": 10,
+            "question": "What is the capital of Poland?",
+            "answer": ["Warsaw", "Krakow", "Lodz", "Wroclaw"],
+            "correctanswer": "Warsaw"
+        }
+    ]
+}

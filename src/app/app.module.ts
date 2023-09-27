@@ -9,6 +9,8 @@ import { FooterComponent } from './footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { QuizzcardComponent } from './quizzcard/quizzcard.component';
 import {MatChipsModule} from '@angular/material/chips';
+import  {HttpClientModule } from '@angular/common/http';
+import { DisplayQuizzComponent } from './display-quizz/display-quizz.component';
 
 @NgModule({
   declarations: [
@@ -16,13 +18,15 @@ import {MatChipsModule} from '@angular/material/chips';
     HomeComponent,
     HeaderComponent,
     FooterComponent,
-    QuizzcardComponent
+    QuizzcardComponent,
+    DisplayQuizzComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatChipsModule
+    MatChipsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

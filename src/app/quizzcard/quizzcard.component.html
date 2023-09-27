@@ -1,29 +1,4 @@
-<section>
-    <div *ngIf="!showResult">
-        <div *ngFor="let item of quiz">
-            <h2>Q.{{item.questionId}}  - {{item.question}}</h2>
-            <div class="container">
-                <mat-chip-listbox *ngFor="let answer of item.answer">
-                    <mat-chip-option (click)="selectAnswer(item.questionId, answer )">{{answer}}</mat-chip-option>
-                  </mat-chip-listbox>
-                <!-- <div *ngFor="let answer of item.answer" class="answer">
-                    <button (click)="selectAnswer(item.questionId, answer )">{{answer}}</button>
-                </div> -->
-            </div>
-        </div>
-        <div *ngIf="validForm" class="container">
-            <button (click)="onSubmit()" class="valider">Valider</button>
-        </div>
-    </div>
-    <div *ngIf="showResult">
-        <div class="container">
-            <h2>Résultat</h2>
-            <div class="flex-box">
-                <div class="result">
-                    <p>Nombre de bonnes réponses : {{score}}</p>
-                    <p>Nombre de mauvaises réponses : {{quiz.length - score}}</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+<div class="quiz-home">
+    <h1>Welcome to the Quiz!</h1>
+    <button class="play-button" routerLink="/quiz">Play</button>
+</div>

@@ -1,22 +1,15 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class QuizzService {
 
-  quiz:any[] = [ 
-    {questionId: 1, question : 'What is the capital of France?', answer : ['Paris', 'Lyon', 'Marseille', 'Toulouse'], correctAnswer : 'Paris'},
-    {questionId: 2, question : 'What is the capital of Spain?', answer : ['Madrid', 'Barcelona', 'Valencia', 'Seville'], correctAnswer : 'Madrid'},
-    {questionId: 3, question : 'What is the capital of Italy?', answer : ['Turin', 'Milan', 'Naples', 'Rome'], correctAnswer : 'Rome'},
-    {questionId: 4, question : 'What is the capital of Germany?', answer : ['Berlin', 'Hamburg', 'Munich', 'Cologne'], correctAnswer : 'Berlin'},
-    {questionId: 5, question : 'What is the capital of Portugal?', answer : ['Porto', 'Lisbon', 'Braga', 'Faro'], correctAnswer : 'Lisbon'},
-    {questionId: 6, question : 'What is the capital of Belgium?', answer : ['Brussels', 'Antwerp', 'Ghent', 'Charleroi'], correctAnswer : 'Brussels'},
-    {questionId: 7, question : 'What is the capital of Netherlands?', answer : ['Rotterdam', 'Amsterdam','The Hague', 'Utrecht'], correctAnswer : 'Amsterdam'},
-    {questionId: 8, question : 'What is the capital of Switzerland?', answer : ['Bern', 'Zurich', 'Geneva', 'Basel'], correctAnswer : 'Bern'},
-    {questionId: 9, question : 'What is the capital of Austria?', answer : ['Graz', 'Linz', 'Vienna', 'Salzburg'], correctAnswer : 'Vienna'},
-    {questionId: 10, question : 'What is the capital of Poland?', answer : ['Warsaw', 'Krakow', 'Lodz', 'Wroclaw'], correctAnswer : 'Warsaw'},
-  ];
+  private quizUrl = 'http://localhost:3000/quiz';
+  quiz:any[] = [];
 
   selectedAnswer:any[] = [];
   correctAnswer:string[] = [];
@@ -25,11 +18,19 @@ export class QuizzService {
   isSelected:boolean = false;
 
 
-  constructor() { }
-
-  getQuiz(){
-    return this.quiz;
+  constructor(private http: HttpClient) { 
   }
+
+  getQuizData(): Observable<any[]> {
+    return this.http.get<any[]>(this.quizUrl);
+  }
+
+  // getQuiz(){
+  //   this.http.get(this.quizUrl).subscribe((data: any) => {
+  //     this.quiz = data
+  //   });
+  //   return this.quiz;
+  // }
 
   getQuestion(questionId:number){
     for(let i = 0; i < this.quiz.length; i++){
@@ -55,13 +56,6 @@ export class QuizzService {
     }
   }
 
-
-  // isAnswerSelected(questionId: number, answer: string) {
-  //   const isAnswered = this.selectedAnswer.find((a) => a.questionId === questionId);
-  //   if (!isAnswered) return false;
-  //   return isAnswered.answer === answer;
-  // }
-
   isComplete(): boolean {
     if (this.selectedAnswer.length == this.quiz.length) {
       for (let i = 0; i < this.selectedAnswer.length; i++) {
@@ -84,4 +78,7 @@ export class QuizzService {
     return this.score;
   }
 
+  reset(){
+    this.quiz = [];
+  }
 }
