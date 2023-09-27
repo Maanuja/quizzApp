@@ -1,32 +1,37 @@
 /* Style the answers grid */
-.container {
+.card{
+    margin: auto;
+    width: fit-content;
+}
+.quizz-container {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-}
-
-.container > * {
-box-sizing: border-box;
-}a
-
-.container > *:not(:last-child) {
-margin-right: 32px;
-}
-
-.answer{
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    margin:  25px auto;
     padding: 10px;
     border-radius: 5px;
-    margin: 10px;
-    text-align: center;
-    font-size: 20px;
-    color: white;
+    border: var(--secondary-color) solid 2px;
+    box-shadow: var(--secondary-color) 0px 0px 10px 0px;
+}
+
+/* Style the answers grid */
+.container {
+    padding: 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 5px;
+    justify-items: center;
+    width: fit-content;
+}
+
+h1{
+    font-size: 40px;
+    font-family: 'Figtree', sans-serif;
 }
 
 h2{
-    text-align: center;
     font-size: 30px;
-    color: #C1666B;
 }
 
 button{

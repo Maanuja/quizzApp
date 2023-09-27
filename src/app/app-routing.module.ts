@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { QuizzcardComponent } from './quizzcard/quizzcard.component';
 import { HomeComponent } from './home/home.component';
+import { ScoreComponent } from './score/score.component';
 
 const routes: Routes = [
   {
@@ -32,6 +33,10 @@ const routes: Routes = [
     path: 'quizz/:id/scoring',
     component: QuizzcardComponent,
   },
+  {
+    path: 'quizz/scoring',
+    component: ScoreComponent,
+  }
 ];
 
 @NgModule({

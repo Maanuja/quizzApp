@@ -10,6 +10,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { QuizzcardComponent } from './quizzcard/quizzcard.component';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatIconModule} from '@angular/material/icon';
+import { CustomButtonComponent } from './custom-button/custom-button.component';
+import { CustomButtonGroupComponent } from './custom-button-group/custom-button-group.component';
+import { ScoreComponent } from './score/score.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,10 @@ import {MatIconModule} from '@angular/material/icon';
     HomeComponent,
     HeaderComponent,
     FooterComponent,
-    QuizzcardComponent
+    QuizzcardComponent,
+    CustomButtonComponent,
+    CustomButtonGroupComponent,
+    ScoreComponent
   ],
   imports: [
     BrowserModule,
