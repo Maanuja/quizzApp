@@ -11,3 +11,9 @@ h1{
     margin: 0;
     justify-content: flex-start;
 }
+
+.icon-size {
+    transform: scale(3);
+    height: 13px;
+    overflow: unset;
+}

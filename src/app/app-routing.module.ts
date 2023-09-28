@@ -1,14 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { QuizzcardComponent } from './quizzcard/quizzcard.component';
-import { HomeComponent } from './home/home.component';
-import { ScoreComponent } from './score/score.component';
-import { SigninComponent } from './signin/signin.component';
-import { SignupComponent } from './signup/signup.component';
+import { HomeComponent } from './main/home/home.component';
+import { ScoreComponent } from './main/score/score.component';
+import { SigninComponent } from './connection/signin/signin.component';
+import { SignupComponent } from './connection/signup/signup.component';
 
 const routes: Routes = [
   {
     path: '',
+    component: HomeComponent,
+  },
+  {
+    path: 'home',
     component: HomeComponent,
   },
   {
@@ -36,9 +40,13 @@ const routes: Routes = [
     component: QuizzcardComponent,
   },
   {
-    path: 'quizz/scoring',
+    path: 'quizz/score',
     component: ScoreComponent,
-  }
+  },
+  {
+    path: '**',
+    redirectTo: 'home'
+  },
 ];
 
 @NgModule({

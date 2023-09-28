@@ -1,28 +1,27 @@
-<section>
-    <div *ngIf="!showResult">
-        <div class="card">
-            <div *ngFor="let item of quiz" class="quizz-container">
-                <h1 class="primary-color is-center">Q.{{item.questionId}}</h1>
-                <h2 class="text-color is-center">{{item.question}}</h2>
-                
+<div *ngIf="!showResult">
+    <div class="card">
+        <div *ngFor="let item of quiz" class="quizz-container">
+            <h1 class="primary-color is-center">Q.{{item.questionId}}</h1>
+            <h2 class="text-color is-center">{{item.question}}</h2>
+            
 
-                <!-- <div class="container"> -->
-                    <!-- <div *ngFor="let answer of item.answer">
-                        <button mat-stroked-button (click)="selectAnswer(item.questionId, answer )">{{answer}}</button>
-                    </div> -->
-                    <!-- <mat-chip-listbox aria-label="answers">
-                        <mat-chip-option *ngFor="let answer of item.answer" (click)="selectAnswer(item.questionId, answer )">{{answer}}</mat-chip-option>
-                    </mat-chip-listbox> -->
-                <!-- </div>   -->
-                    <div *ngFor="let answer of item.answer" class="answer">
-                        <app-custom-button (click)="selectAnswer(item.questionId, answer )" label="{{answer}}"></app-custom-button>
-                        <!-- <button (click)="selectAnswer(item.questionId, answer )">{{answer}}</button> -->
-                    </div>
-            </div>
-        </div>
-        <div *ngIf="validForm" class="container">
-            <button (click)="onSubmit()" class="valider" routerLink="/quizz/scoring">Valider</button>
+            <!-- <div class="container"> -->
+                <!-- <div *ngFor="let answer of item.answer">
+                    <button mat-stroked-button (click)="selectAnswer(item.questionId, answer )">{{answer}}</button>
+                </div> -->
+                <!-- <mat-chip-listbox aria-label="answers">
+                    <mat-chip-option *ngFor="let answer of item.answer" (click)="selectAnswer(item.questionId, answer )">{{answer}}</mat-chip-option>
+                </mat-chip-listbox> -->
+            <!-- </div>   -->
+                <div *ngFor="let answer of item.answer" class="answer">
+                    <app-custom-button (click)="selectAnswer(item.questionId, answer )" label="{{answer}}"></app-custom-button>
+                    <!-- <button (click)="selectAnswer(item.questionId, answer )">{{answer}}</button> -->
+                </div>
         </div>
     </div>
-    
-</section>
+    <div *ngIf="validForm" class="container">
+        <button (click)="onSubmit()" class="valider" routerLink="/quizz/scoring">Valider</button>
+    </div>
+    <app-score *ngIf="showResult" [score]="score" [quizz]="quiz"></app-score>
+</div>
+

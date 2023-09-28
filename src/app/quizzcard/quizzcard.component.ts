@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { QuizzService } from '../quizz.service';
+import { QuizzService } from '../shared/quizz.service';
 
 @Component({
   selector: 'app-quizzcard',

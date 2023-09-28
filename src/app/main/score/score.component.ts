@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Quiz } from 'src/app/quizz.model';
 
 @Component({
   selector: 'app-score',
@@ -7,5 +8,6 @@ import { Component, Input } from '@angular/core';
 })
 export class ScoreComponent {
   @Input() score: number = 0;
-  quiz: any = [];
+  @Input() quizz: Quiz[] = [];
+  // @Input() showResult: boolean = false;
 }
