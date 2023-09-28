@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata&family=Nunito:wght@800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@1,900&family=Inconsolata&family=Nunito:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Figtree&family=Inconsolata&display=swap');
+
 html, body { 
     height: 100%;
     margin: 0;
@@ -35,9 +36,13 @@ body {
     background-color: transparent;
 }
 
-.center{
+.is-center{
     text-align: center;
     margin: auto;
+}
+
+.is-left {
+    margin-right: auto;
 }
 
 .bold{
@@ -53,12 +58,40 @@ body {
     min-height: 100%;
 }
 
+.content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align: center;
+
+/*     
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: auto;  */
+
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; */
+}
+
+
 input, textarea {
+    font-family: 'Figtree', sans-serif;
     background-color: var(--secondary-color);
     border: none;
     border-radius: 10px;
     padding: 5px;
-    margin: 5px;
+    margin: 5px 0;
 }
 
 input::placeholder, textarea::placeholder {
@@ -67,4 +100,27 @@ input::placeholder, textarea::placeholder {
 
 input:focus, textarea:focus {
     outline: var(--primary-color) auto 1px;
+}
+
+input[type="password"] {
+    color: var(--primary-color);
+}
+
+.custom-btn{
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    border: none;
+    border-radius: 1rem;
+    padding: 0.5rem 1rem;
+    margin: 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    font-family: 'Figtree', sans-serif;
+}
+
+
+p{
+    margin: 0;
+    font-family: 'Figtree', sans-serif;
+
 }

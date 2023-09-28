@@ -13,6 +13,12 @@ import {MatIconModule} from '@angular/material/icon';
 import { CustomButtonComponent } from './custom-button/custom-button.component';
 import { CustomButtonGroupComponent } from './custom-button-group/custom-button-group.component';
 import { ScoreComponent } from './score/score.component';
+import { SigninComponent } from './signin/signin.component';
+import { SignupComponent } from './signup/signup.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatFormFieldModule} from '@angular/material/form-field'
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -23,14 +29,21 @@ import { ScoreComponent } from './score/score.component';
     QuizzcardComponent,
     CustomButtonComponent,
     CustomButtonGroupComponent,
-    ScoreComponent
+    ScoreComponent,
+    SigninComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatChipsModule,
-    MatIconModule
+    MatIconModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatButtonModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
