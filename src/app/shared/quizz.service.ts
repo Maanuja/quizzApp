@@ -9,21 +9,18 @@ export class QuizzService {
     {questionId: 1, question : 'What is the capital of France?', answer : ['Paris', 'Lyon', 'Marseille', 'Toulouse'], correctAnswer : 'Paris'},
     {questionId: 2, question : 'What is the capital of Spain?', answer : ['Madrid', 'Barcelona', 'Valencia', 'Seville'], correctAnswer : 'Madrid'},
     {questionId: 3, question : 'What is the capital of Italy?', answer : ['Turin', 'Milan', 'Naples', 'Rome'], correctAnswer : 'Rome'},
-    {questionId: 4, question : 'What is the capital of Germany?', answer : ['Berlin', 'Hamburg', 'Munich', 'Cologne'], correctAnswer : 'Berlin'},
-    {questionId: 5, question : 'What is the capital of Portugal?', answer : ['Porto', 'Lisbon', 'Braga', 'Faro'], correctAnswer : 'Lisbon'},
-    {questionId: 6, question : 'What is the capital of Belgium?', answer : ['Brussels', 'Antwerp', 'Ghent', 'Charleroi'], correctAnswer : 'Brussels'},
-    {questionId: 7, question : 'What is the capital of Netherlands?', answer : ['Rotterdam', 'Amsterdam','The Hague', 'Utrecht'], correctAnswer : 'Amsterdam'},
-    {questionId: 8, question : 'What is the capital of Switzerland?', answer : ['Bern', 'Zurich', 'Geneva', 'Basel'], correctAnswer : 'Bern'},
-    {questionId: 9, question : 'What is the capital of Austria?', answer : ['Graz', 'Linz', 'Vienna', 'Salzburg'], correctAnswer : 'Vienna'},
-    {questionId: 10, question : 'What is the capital of Poland?', answer : ['Warsaw', 'Krakow', 'Lodz', 'Wroclaw'], correctAnswer : 'Warsaw'},
+    // {questionId: 4, question : 'What is the capital of Germany?', answer : ['Berlin', 'Hamburg', 'Munich', 'Cologne'], correctAnswer : 'Berlin'},
+    // {questionId: 5, question : 'What is the capital of Portugal?', answer : ['Porto', 'Lisbon', 'Braga', 'Faro'], correctAnswer : 'Lisbon'},
+    // {questionId: 6, question : 'What is the capital of Belgium?', answer : ['Brussels', 'Antwerp', 'Ghent', 'Charleroi'], correctAnswer : 'Brussels'},
+    // {questionId: 7, question : 'What is the capital of Netherlands?', answer : ['Rotterdam', 'Amsterdam','The Hague', 'Utrecht'], correctAnswer : 'Amsterdam'},
+    // {questionId: 8, question : 'What is the capital of Switzerland?', answer : ['Bern', 'Zurich', 'Geneva', 'Basel'], correctAnswer : 'Bern'},
+    // {questionId: 9, question : 'What is the capital of Austria?', answer : ['Graz', 'Linz', 'Vienna', 'Salzburg'], correctAnswer : 'Vienna'},
+    // {questionId: 10, question : 'What is the capital of Poland?', answer : ['Warsaw', 'Krakow', 'Lodz', 'Wroclaw'], correctAnswer : 'Warsaw'},
   ];
 
   selectedAnswer:any[] = [];
   correctAnswer:string[] = [];
-  score:number = 0;
   showResult:boolean = false;
-  isSelected:boolean = false;
-
 
   constructor() { }
 
@@ -47,12 +44,16 @@ export class QuizzService {
     }
   }
 
-  getUserAnswer(questionId:number, answer:string){
+  setUserAnswer(questionId:number, answer:string){
     for(let i = 0; i < this.quiz.length; i++){
       if(this.quiz[i].questionId == questionId){
         this.selectedAnswer[i] = answer;
       }
     }
+  }
+  
+  getUserAnswer(){
+    return this.selectedAnswer;
   }
 
 
@@ -76,12 +77,15 @@ export class QuizzService {
 
 
   getScore(){
+    let score = 0;
     for(let i = 0; i < this.quiz.length; i++){
+      console.log('selectedAnswer',this.selectedAnswer[i]);
+      console.log('correctAnswer',this.quiz[i].correctAnswer);
       if(this.selectedAnswer[i] == this.quiz[i].correctAnswer){
-        this.score++;
+        score++;
       }
     }
-    return this.score;
+    return score;
   }
 
 }

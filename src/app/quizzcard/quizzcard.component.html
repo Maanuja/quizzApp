@@ -14,14 +14,22 @@
                 </mat-chip-listbox> -->
             <!-- </div>   -->
                 <div *ngFor="let answer of item.answer" class="answer">
+                    <!-- <button
+                        class="custom-button"
+                        [disabled]="isQuizFinished"
+                        (click)="selectAnswer(item.id, answer)"
+                        [class.selected]="isSelected"
+                    >
+                        {{ answer }}
+                    </button> -->
+
                     <app-custom-button (click)="selectAnswer(item.questionId, answer )" label="{{answer}}"></app-custom-button>
                     <!-- <button (click)="selectAnswer(item.questionId, answer )">{{answer}}</button> -->
                 </div>
         </div>
     </div>
     <div *ngIf="validForm" class="container">
-        <button (click)="onSubmit()" class="valider" routerLink="/quizz/scoring">Valider</button>
+        <button (click)="onSubmit()" class="valider">Valider</button>
     </div>
-    <app-score *ngIf="showResult" [score]="score" [quizz]="quiz"></app-score>
 </div>
 

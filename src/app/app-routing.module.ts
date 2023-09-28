@@ -40,7 +40,7 @@ const routes: Routes = [
     component: QuizzcardComponent,
   },
   {
-    path: 'quizz/score',
+    path: 'score',
     component: ScoreComponent,
   },
   {
