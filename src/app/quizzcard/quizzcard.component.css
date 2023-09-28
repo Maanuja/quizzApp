@@ -34,44 +34,22 @@ h2{
     font-size: 30px;
 }
 
-button{
-    background-color: #4cb1ad; 
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 16px;
-    margin: 4px 2px;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-    border: #4cb1ad solid 2px;
-}
-
-button:hover {
-    opacity: 0.8;
-}
-
-.true{
-    color: #2D936C;
-}
-
-.false{
-    color: #C1666B;
-}
-
-.valider{
-    background-color: #C1666B;
-    text-align: center;
-    font-size: 25px;
-    color: white;
-}
-
-.active{
-    border: #2D936C solid 2px;
-}
-
 .selected{
     border: #C1666B solid 2px;
 }
+
+.custom-button {
+    border: 1px solid var(--primary-color);
+    border-radius: 10px;
+    background-color: transparent;
+    padding: 30px 100px;
+    margin: 10px 0;
+    cursor: pointer;
+    color: var(--primary-color);
+}
+
+.custom-button.selected {
+    background-color: var(--secondary-color); /* Change to your desired selected background color */
+    color: var(--primary-color); /* Change to your desired selected text color */
+}
+  

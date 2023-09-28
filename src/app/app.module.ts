@@ -11,7 +11,6 @@ import { QuizzcardComponent } from './quizzcard/quizzcard.component';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatIconModule} from '@angular/material/icon';
 import { CustomButtonComponent } from './custom-button/custom-button.component';
-import { CustomButtonGroupComponent } from './custom-button-group/custom-button-group.component';
 import { ScoreComponent } from './main/score/score.component';
 import { SigninComponent } from './connection/signin/signin.component';
 import { SignupComponent } from './connection/signup/signup.component';
@@ -28,7 +27,6 @@ import { MatInputModule } from '@angular/material/input';
     FooterComponent,
     QuizzcardComponent,
     CustomButtonComponent,
-    CustomButtonGroupComponent,
     ScoreComponent,
     SigninComponent,
     SignupComponent
