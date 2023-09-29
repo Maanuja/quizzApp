@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Quiz } from 'src/app/quizz.model';
 
@@ -10,7 +10,6 @@ import { Quiz } from 'src/app/quizz.model';
 export class ScoreComponent {
   score!: number;
   quiz!: Quiz[];
-  // @Input() showResult: boolean = false;
 
   constructor(private route: ActivatedRoute, private router: Router) {}
 

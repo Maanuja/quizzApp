@@ -1,0 +1,10 @@
+<!-- <app-custom-button (click)="selectAnswer(questionId, answer )" label="{{answer}}"></app-custom-button> -->
+<div *ngFor="let answer of answers" class="answer">
+    <button
+        class="custom-button"
+        [ngClass]="{ 'selected': isAnswerSelected(answer, questionId) }"
+        (click)="selectAnswer(questionId, answer)"
+    >
+        {{ answer }}
+    </button>               
+</div>

@@ -6,16 +6,16 @@ import { Injectable } from '@angular/core';
 export class QuizzService {
 
   quiz:any[] = [ 
-    {questionId: 1, question : 'What is the capital of France?', answer : ['Paris', 'Lyon', 'Marseille', 'Toulouse'], correctAnswer : 'Paris'},
-    {questionId: 2, question : 'What is the capital of Spain?', answer : ['Madrid', 'Barcelona', 'Valencia', 'Seville'], correctAnswer : 'Madrid'},
-    {questionId: 3, question : 'What is the capital of Italy?', answer : ['Turin', 'Milan', 'Naples', 'Rome'], correctAnswer : 'Rome'},
-    // {questionId: 4, question : 'What is the capital of Germany?', answer : ['Berlin', 'Hamburg', 'Munich', 'Cologne'], correctAnswer : 'Berlin'},
-    // {questionId: 5, question : 'What is the capital of Portugal?', answer : ['Porto', 'Lisbon', 'Braga', 'Faro'], correctAnswer : 'Lisbon'},
-    // {questionId: 6, question : 'What is the capital of Belgium?', answer : ['Brussels', 'Antwerp', 'Ghent', 'Charleroi'], correctAnswer : 'Brussels'},
-    // {questionId: 7, question : 'What is the capital of Netherlands?', answer : ['Rotterdam', 'Amsterdam','The Hague', 'Utrecht'], correctAnswer : 'Amsterdam'},
-    // {questionId: 8, question : 'What is the capital of Switzerland?', answer : ['Bern', 'Zurich', 'Geneva', 'Basel'], correctAnswer : 'Bern'},
-    // {questionId: 9, question : 'What is the capital of Austria?', answer : ['Graz', 'Linz', 'Vienna', 'Salzburg'], correctAnswer : 'Vienna'},
-    // {questionId: 10, question : 'What is the capital of Poland?', answer : ['Warsaw', 'Krakow', 'Lodz', 'Wroclaw'], correctAnswer : 'Warsaw'},
+    {questionId: 1, question : 'What is the capital of France?', answers : ['Paris', 'Lyon', 'Marseille', 'Toulouse'], correctAnswer : 'Paris'},
+    {questionId: 2, question : 'What is the capital of Spain?', answers : ['Madrid', 'Barcelona', 'Valencia', 'Seville'], correctAnswer : 'Madrid'},
+    {questionId: 3, question : 'What is the capital of Italy?', answers : ['Turin', 'Milan', 'Naples', 'Rome'], correctAnswer : 'Rome'},
+    // {questionId: 4, question : 'What is the capital of Germany?', answers : ['Berlin', 'Hamburg', 'Munich', 'Cologne'], correctAnswer : 'Berlin'},
+    // {questionId: 5, question : 'What is the capital of Portugal?', answers : ['Porto', 'Lisbon', 'Braga', 'Faro'], correctAnswer : 'Lisbon'},
+    // {questionId: 6, question : 'What is the capital of Belgium?', answers : ['Brussels', 'Antwerp', 'Ghent', 'Charleroi'], correctAnswer : 'Brussels'},
+    // {questionId: 7, question : 'What is the capital of Netherlands?', answers : ['Rotterdam', 'Amsterdam','The Hague', 'Utrecht'], correctAnswer : 'Amsterdam'},
+    // {questionId: 8, question : 'What is the capital of Switzerland?', answers : ['Bern', 'Zurich', 'Geneva', 'Basel'], correctAnswer : 'Bern'},
+    // {questionId: 9, question : 'What is the capital of Austria?', answers : ['Graz', 'Linz', 'Vienna', 'Salzburg'], correctAnswer : 'Vienna'},
+    // {questionId: 10, question : 'What is the capital of Poland?', answers : ['Warsaw', 'Krakow', 'Lodz', 'Wroclaw'], correctAnswer : 'Warsaw'},
   ];
 
   selectedAnswer:any[] = [];
@@ -86,6 +86,10 @@ export class QuizzService {
       }
     }
     return score;
+  }
+
+  resetUserAnswers(){
+    this.selectedAnswer = [];
   }
 
 }

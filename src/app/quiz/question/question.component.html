@@ -1,0 +1,17 @@
+<div>
+    <div class="card">
+        <div class="quizz-container">
+            <h1 class="primary-color is-center">Q.{{questionId}}</h1>
+
+            <h2 class="text-color is-center">{{question.question}}</h2>
+            <app-answers [answers]="question.answers" [questionId]="questionId" [quiz]="quiz" (selectedEmitter)="recieveData($event)" (formEmitter)="recievedForm($event)"></app-answers>
+            
+            <div *ngIf="isSelected && validForm" class="container">
+                <button (click)="onSubmit()" class="valider">Valider</button>
+            </div>   
+            <div *ngIf="isSelected && !validForm" class="container">
+                <button (click)="nextQuestion()" class="valider">Next</button>
+            </div>
+        </div>
+    </div>
+</div>

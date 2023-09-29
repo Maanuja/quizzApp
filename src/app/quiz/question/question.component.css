@@ -1,0 +1,16 @@
+/* Style the answers grid */
+.card{
+    margin: auto;
+    width: fit-content;
+}
+.quizz-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin:  25px auto;
+    padding: 10px;
+    border-radius: 5px;
+    border: var(--secondary-color) solid 2px;
+    box-shadow: var(--secondary-color) 0px 0px 10px 0px;
+}
