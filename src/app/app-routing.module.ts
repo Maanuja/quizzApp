@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { QuizzcardComponent } from './quizzcard/quizzcard.component';
+import { QuizComponent } from './quiz/quiz.component';
 import { HomeComponent } from './main/home/home.component';
 import { ScoreComponent } from './main/score/score.component';
 import { SigninComponent } from './connection/signin/signin.component';
 import { SignupComponent } from './connection/signup/signup.component';
+import { QuestionComponent } from './quiz/question/question.component';
 
 const routes: Routes = [
   {
@@ -25,19 +26,19 @@ const routes: Routes = [
   },
   {
     path: 'profile',
-    component: QuizzcardComponent,
+    component: QuizComponent,
   },
   {
-    path: 'quizz',
-    component: QuizzcardComponent,
+    path: 'quiz',
+    component: QuizComponent,
   },
   {
-    path: 'quizz/:id',
-    component: QuizzcardComponent,
+    path: 'quiz/:questionId',
+    component: QuestionComponent,
   },
   {
-    path: 'quizz/:id/scoring',
-    component: QuizzcardComponent,
+    path: 'quiz/:id/scoring',
+    component: QuizComponent,
   },
   {
     path: 'score',

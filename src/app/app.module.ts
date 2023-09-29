@@ -7,7 +7,7 @@ import { HomeComponent } from './main/home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { QuizzcardComponent } from './quizzcard/quizzcard.component';
+import { QuizComponent } from './quiz/quiz.component';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatIconModule} from '@angular/material/icon';
 import { CustomButtonComponent } from './custom-button/custom-button.component';
@@ -18,6 +18,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field'
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
+import { QuestionComponent } from './quiz/question/question.component';
+import { AnswersComponent } from './quiz/answers/answers.component';
 
 @NgModule({
   declarations: [
@@ -25,11 +27,13 @@ import { MatInputModule } from '@angular/material/input';
     HomeComponent,
     HeaderComponent,
     FooterComponent,
-    QuizzcardComponent,
+    QuizComponent,
     CustomButtonComponent,
     ScoreComponent,
     SigninComponent,
-    SignupComponent
+    SignupComponent,
+    QuestionComponent,
+    AnswersComponent
   ],
   imports: [
     BrowserModule,
