@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Question, Quiz } from 'src/app/quizz.model';
+import { Question, Quiz } from 'src/app/models/quizz.model';
 import { QuizzService } from 'src/app/shared/quizz.service';
 
 @Component({
@@ -19,7 +19,8 @@ export class QuestionComponent {
   score:number = 0;
 
   constructor( private quizService: QuizzService, private router: Router, private route: ActivatedRoute) {
-    
+    console.log(this.isSelected);
+
   }
 
   ngOnInit(){
@@ -52,17 +53,21 @@ export class QuestionComponent {
   }
 
   onSubmit(){
-    this.score = this.quizService.getScore();
+    this.score = this.quizService.findScore();
+    this.quizService.setScore(this.score);
     this.showResult = true;
     this.quizService.resetUserAnswers();
+
+    // const data = {
+    //   score: this.score,
+    //   quiz: JSON.stringify(this.quiz)
+    // };
+
     this.router.navigate(
       ['/score'],
-      { 
-        queryParams: { 
-          score: this.score,
-          quiz: JSON.stringify(this.quiz)
-        } 
-      }
+      // { 
+      //   queryParams: {data : encodeURIComponent(JSON.stringify(data))} 
+      // }
     );
   }
 }

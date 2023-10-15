@@ -24,10 +24,12 @@ export class QuizComponent {
 
   ngOnInit(){
     this.quiz = this.quizService.getQuiz();
+    console.log('quizuer ans', this.quizService.selectedAnswer);
   }
 
   start(){
     this.startQuiz = true;
+    this.quizService.setPseudo('');
   }
   // selectAnswer(questionId:number, answer:string ){
   //   this.quizService.setUserAnswer(questionId, answer);

@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Router } from '@angular/router';
-import { Quiz } from 'src/app/quizz.model';
+import { Quiz } from 'src/app/models/quizz.model';
 import { QuizzService } from 'src/app/shared/quizz.service';
 
 @Component({
@@ -21,10 +21,18 @@ export class AnswersComponent {
   validForm: boolean = false;
   score:number = 0;
   showResult:boolean = false;
+  selectedAnswer: number = 0;
 
-  constructor( private quizService: QuizzService, private router: Router) {}
+  constructor( private quizService: QuizzService, private router: Router) {
+    router.events.subscribe((val) => {
+      // console.log('route changed');
+      this.isSelected = false;
+      this.selectedEmitter.emit(this.isSelected);
+    });
+  }
 
-  selectAnswer(questionId:number, answer:string ){
+  selectAnswer(questionId:number, answer:string, answerId:number ){
+    this.selectedAnswer = answerId;
     this.quizService.setUserAnswer(questionId, answer);
     // console.log('user', this.quizService.getUserAnswer());
     this.validForm = this.quizService.isComplete();

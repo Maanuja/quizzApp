@@ -1,10 +1,12 @@
 <div class="content">
     <h1 class="lead bold">Play fun quizzes</h1>
     <p class="text-color">Created by Maanu</p>
-    <input type="text" class="pseudo-input" placeholder="Entre pseudo" onkeypress=""/>
-    <button mat-icon-button class="text-color revert-btn" routerLink="/quiz" aria-label="play btn">
-        <mat-icon class="icon-size">play_circle_filled</mat-icon>
-    </button>
+    <form class="form-style" [formGroup]="form" (ngSubmit)="onSubmit()">
+        <input type="text" class="pseudo-input" placeholder="Entre pseudo" onkeypress="" formControlName="pseudo" (input)="onPseudoInput($event)"/>
+        <button mat-icon-button class="text-color revert-btn"  aria-label="play btn" type="submit" [disabled]="hasPseudo">
+            <mat-icon class="icon-size">play_circle_filled</mat-icon>
+        </button>
+    </form>
     <button class="custom-btn" routerLink="/sign-in">Sign In</button>
     <p class="text-color">Don't Have an Account? <a routerLink="/sign-up" class="text-color bold">Sign Up</a></p>
 </div>

@@ -10,7 +10,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { QuizComponent } from './quiz/quiz.component';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatIconModule} from '@angular/material/icon';
-import { CustomButtonComponent } from './custom-button/custom-button.component';
 import { ScoreComponent } from './main/score/score.component';
 import { SigninComponent } from './connection/signin/signin.component';
 import { SignupComponent } from './connection/signup/signup.component';
@@ -28,7 +27,6 @@ import { AnswersComponent } from './quiz/answers/answers.component';
     HeaderComponent,
     FooterComponent,
     QuizComponent,
-    CustomButtonComponent,
     ScoreComponent,
     SigninComponent,
     SignupComponent,
