@@ -18,6 +18,7 @@ export class QuizzService {
     // {questionId: 10, question : 'What is the capital of Poland?', answers : ['Warsaw', 'Krakow', 'Lodz', 'Wroclaw'], correctAnswer : 'Warsaw'},
   ];
 
+  user:any = {};
   selectedAnswer:any[] = [];
   correctAnswer:string[] = [];
   showResult:boolean = false;
@@ -76,7 +77,7 @@ export class QuizzService {
   }
 
 
-  getScore(){
+  findScore(){
     let score = 0;
     for(let i = 0; i < this.quiz.length; i++){
       console.log('selectedAnswer',this.selectedAnswer[i]);
@@ -88,8 +89,23 @@ export class QuizzService {
     return score;
   }
 
+  setScore(score : number){
+    this.user['score'] = score;
+  }
+
+  getScore(){
+    return this.user['score'];
+  }
+
   resetUserAnswers(){
     this.selectedAnswer = [];
+  }
+
+  setPseudo(name: string){
+    this.user['name'] = name;
+  }
+  getPseudo(){
+    return this.user['name'];
   }
 
 }
