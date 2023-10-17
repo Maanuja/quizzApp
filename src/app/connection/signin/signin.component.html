@@ -1,8 +1,8 @@
 <div class="content">
-    <form [formGroup]="signin">
+    <form [formGroup]="signin" (ngSubmit)="login()">
         <h1 class="text-color bold is-left">Sign In</h1>
         <mat-form-field>
-            <input matInput class="pseudo-input" placeholder="Pseudo" type="text" formControlName="pseudo" required>
+            <input matInput class="pseudo-input" placeholder="Pseudo" type="text" formControlName="username" required>
         </mat-form-field>
         <mat-form-field>
             <input matInput placeholder="Password" [type]="hide ? 'password' : 'text'" formControlName="password" required>

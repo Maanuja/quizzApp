@@ -1,0 +1,35 @@
+{
+    "users":[
+        {
+            "userId": 1,
+            "username": "admin",
+            "password": "admin"
+        }       
+    ],
+    "quiz": [
+        {
+            "questionId": 1,
+            "question": "What is the capital of France?",
+            "answer": ["Paris", "Lyon", "Marseille", "Toulouse"],
+            "correctanswer": "Paris"
+        },
+        {
+            "questionId": 2,
+            "question": "What is the capital of Spain?",
+            "answer": ["Madrid", "Barcelona", "Valencia", "Seville"],
+            "correctanswer": "Madrid"
+        },
+        {
+            "questionId": 3,
+            "question": "What is the capital of Italy?",
+            "answer": ["Turin", "Milan", "Naples", "Rome"],
+            "correctanswer": "Rome"
+        },
+        {
+            "questionId": 4,
+            "question": "What is the capital of Germany?",
+            "answer": ["Berlin", "Hamburg", "Munich", "Cologne"],
+            "correctanswer": "Berlin"
+        }
+    ]
+}
