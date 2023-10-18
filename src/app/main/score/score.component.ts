@@ -18,7 +18,7 @@ export class ScoreComponent {
   ngOnInit() {
     this.name = this.quizService.getPseudo();
     this.score = this.quizService.getScore();
-    this.quiz = this.quizService.getQuiz();
+    this.quiz = this.quizService.quizContent;
 
     // this.route.queryParamMap.subscribe((queryParams) => {
     //   const serializedData = queryParams.get('data');

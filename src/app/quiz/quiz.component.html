@@ -1,11 +1,11 @@
 <div>
     <div *ngIf="!startQuiz">
-        <button mat-icon-button class="text-color revert-btn" routerLink="/quiz/1" (click)="start()" aria-label="play btn">
+        <button mat-icon-button class="text-color revert-btn" (click)="start()" aria-label="play btn">
             <mat-icon class="icon-size">play_circle_filled</mat-icon>
         </button>
     </div>
     <div *ngIf="startQuiz">
-        <app-question></app-question>
+        <app-question [idCategory]="idCategory"></app-question>
     </div>
     <!-- <div *ngIf="validForm" class="container">
         <button (click)="onSubmit()" class="valider">Valider</button>

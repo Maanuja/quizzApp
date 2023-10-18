@@ -1,6 +1,6 @@
 <div class="content">
-    <form [formGroup]="signin" (ngSubmit)="login()">
-        <h1 class="text-color bold is-left">Sign In</h1>
+    <form [formGroup]="loginform" (ngSubmit)="login()">
+        <h1 class="text-color bold is-left">Log In</h1>
         <mat-form-field>
             <input matInput class="pseudo-input" placeholder="Pseudo" type="text" formControlName="username" required>
         </mat-form-field>
@@ -9,7 +9,7 @@
             <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
             <!-- *ngIf="!passwordInput.value" -->
         </mat-form-field>
-        <button class="custom-btn">Sign In</button>
+        <button class="custom-btn">Log In</button>
         <p class="text-color">Don't Have an Account? <a routerLink="/sign-up" class="text-color bold">Sign Up</a></p>
     </form>
 </div>

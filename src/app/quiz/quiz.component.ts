@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { QuizzService } from '../shared/quizz.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-quiz',
@@ -17,19 +17,30 @@ export class QuizComponent {
   // showResult:boolean = false;
   // validForm: boolean = false;
   // isSelected:boolean = false;
-  
+  idCategory = 1;
+  playerName = '';
   isQuizFinished = false;
 
-  constructor( private quizService: QuizzService, private router: Router) { }
+  constructor( 
+    private quizService: QuizzService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) { 
+    this.route.params.subscribe(params => {
+      console.log('params', params);
+      this.idCategory = params['categoryId'];
+    });
+  }
 
   ngOnInit(){
-    this.quiz = this.quizService.getQuiz();
+    this.quiz = this.quizService.quizContent;
+    console.log('quiz', this.quiz);
     console.log('quizuer ans', this.quizService.selectedAnswer);
   }
 
   start(){
     this.startQuiz = true;
-    this.quizService.setPseudo('');
+    this.router.navigate([`/categories/${this.idCategory}/quiz/${this.quiz[0].questionId}`]);
   }
   // selectAnswer(questionId:number, answer:string ){
   //   this.quizService.setUserAnswer(questionId, answer);

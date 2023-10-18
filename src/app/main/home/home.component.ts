@@ -10,9 +10,8 @@ import { QuizzService } from 'src/app/shared/quizz.service';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent {
-  playerName = '';
+  playerName!: string;
   disablePseudo = true;
-
 
   form = new FormGroup({
     pseudo: new FormControl('', Validators.required),
@@ -26,7 +25,9 @@ export class HomeComponent {
     if(this.authService.isUserConnected()){
       this.disablePseudo = false;
     }
-    console.log('user', this.authService.user);
+    if (this.authService.user){
+      // console.log('Connected user', this.authService.user);
+    }
     this.playerName = this.authService.user?.username || '';
   }
 
@@ -37,8 +38,16 @@ export class HomeComponent {
   }
 
   onSubmit() {
+    // console.log('none connected user name', this.form.value.pseudo);
     this.quizService.setPseudo(this.form.value.pseudo as string);
-    this.router.navigate(['quiz/1']);
+    this.quizService.playerName = this.form.value.pseudo as string;
+    this.router.navigate(['/categories']);
+  }
+
+  navigateToCategories() {
+    this.quizService.setPseudo(this.playerName);
+    // console.log('connected user name', this.quizService.playerName);
+    this.router.navigate(['/categories']);
   }
 
 }
