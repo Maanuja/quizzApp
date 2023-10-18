@@ -13,38 +13,38 @@ export class QuestionComponent {
   quiz!: Quiz[];
   @Input() question!: Question;
   @Input() questionId: number = 1;
+  @Input() idCategory: number = 1;
+
   
   isSelected: boolean = false;
   validForm: boolean = false;
   score:number = 0;
 
-  constructor( private quizService: QuizzService, private router: Router, private route: ActivatedRoute) {
-    console.log(this.isSelected);
-
-  }
+  constructor( private quizService: QuizzService, private router: Router, private route: ActivatedRoute) {}
 
   ngOnInit(){
     this.route.params.subscribe(params => {
-      console.log('params', params);
       this.questionId = +params['questionId'];
+      this.idCategory = +params['idCategory'];
     });
     
-    this.quiz = this.quizService.getQuiz();
+    this.quiz = this.quizService.quizContent;
     this.question = this.quizService.getQuestion(this.questionId);
+    console.log('question', this.question);
   }
 
   nextQuestion(){
     this.questionId = this.questionId+1;
-    const url = `/quiz/${this.questionId}`;
+    const url = `/categories/${this.idCategory}/quiz/${this.questionId}`;
     this.router.navigate([url]);
     this.question = this.quizService.getQuestion(this.questionId);
 
-    console.log('nextQuestionId', this.questionId);
-    console.log('nextQuestion', this.question);
+    // console.log('nextQuestionId', this.questionId);
+    // console.log('nextQuestion', this.question);
   }
 
   recieveData(selected: boolean){
-    console.log('selected', selected);
+    // console.log('selected', selected);
     this.isSelected = selected;
   }
 
@@ -58,16 +58,8 @@ export class QuestionComponent {
     this.showResult = true;
     this.quizService.resetUserAnswers();
 
-    // const data = {
-    //   score: this.score,
-    //   quiz: JSON.stringify(this.quiz)
-    // };
-
     this.router.navigate(
       ['/score'],
-      // { 
-      //   queryParams: {data : encodeURIComponent(JSON.stringify(data))} 
-      // }
     );
   }
 }

@@ -1,4 +1,19 @@
 <header>
-    <h1>{{title}}</h1>
-    <p class="description">{{description}}</p>
+    <img src="assets/img/quiz-logo-icon.png" 
+        height="100px" 
+        alt="logo" 
+        routerLink="/home"
+    >
+    <div class="is-center">
+        <h1 class="lead bold">Play fun quizzes</h1>
+        <p class="text-color">Created by Maanu</p>
+    </div>
+    <div *ngIf="isUserConnected">
+        <h2>{{ getUsername }}</h2>
+        <button class="custom-btn is-right" (click)="logout()" routerLink="/login">Log out</button>
+    </div>
+    <div *ngIf="!isUserConnected">
+        <h2>{{ getUsername }}</h2>
+        <button class="custom-btn is-right" routerLink="/log-in">Log In</button>
+    </div>
 </header>

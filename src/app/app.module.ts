@@ -11,7 +11,7 @@ import { QuizComponent } from './quiz/quiz.component';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatIconModule} from '@angular/material/icon';
 import { ScoreComponent } from './main/score/score.component';
-import { SigninComponent } from './connection/signin/signin.component';
+import { LoginComponent } from './connection/login/login.component';
 import { SignupComponent } from './connection/signup/signup.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field'
@@ -19,6 +19,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { QuestionComponent } from './quiz/question/question.component';
 import { AnswersComponent } from './quiz/answers/answers.component';
+import { HttpClientModule } from "@angular/common/http";
+import { CategoriesComponent } from './quiz/categories/categories.component';
 
 @NgModule({
   declarations: [
@@ -28,10 +30,11 @@ import { AnswersComponent } from './quiz/answers/answers.component';
     FooterComponent,
     QuizComponent,
     ScoreComponent,
-    SigninComponent,
+    LoginComponent,
     SignupComponent,
     QuestionComponent,
-    AnswersComponent
+    AnswersComponent,
+    CategoriesComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +46,8 @@ import { AnswersComponent } from './quiz/answers/answers.component';
     ReactiveFormsModule,
     MatFormFieldModule,
     MatButtonModule,
-    MatInputModule
+    MatInputModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

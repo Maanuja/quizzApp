@@ -3,9 +3,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { QuizComponent } from './quiz/quiz.component';
 import { HomeComponent } from './main/home/home.component';
 import { ScoreComponent } from './main/score/score.component';
-import { SigninComponent } from './connection/signin/signin.component';
+import { LoginComponent } from './connection/login/login.component';
 import { SignupComponent } from './connection/signup/signup.component';
 import { QuestionComponent } from './quiz/question/question.component';
+import { CategoriesComponent } from './quiz/categories/categories.component';
 
 const routes: Routes = [
   {
@@ -17,8 +18,8 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
-    path: 'sign-in',
-    component: SigninComponent,
+    path: 'log-in',
+    component: LoginComponent,
   },
   {
     path: 'sign-up',
@@ -29,11 +30,15 @@ const routes: Routes = [
     component: QuizComponent,
   },
   {
-    path: 'quiz',
-    component: QuizComponent,
+    path: 'categories',
+    component: CategoriesComponent,
   },
   {
-    path: 'quiz/:questionId',
+    path: 'categories/:categoryId',
+    component : QuizComponent
+  },
+  {
+    path: 'categories/:idCategory/quiz/:questionId',
     component: QuestionComponent,
   },
   {
@@ -44,10 +49,10 @@ const routes: Routes = [
     path: 'score',
     component: ScoreComponent,
   },
-  {
-    path: '**',
-    redirectTo: 'home'
-  },
+  // {
+  //   path: '**',
+  //   redirectTo: 'home'
+  // },
 ];
 
 @NgModule({

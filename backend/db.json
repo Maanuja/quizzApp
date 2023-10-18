@@ -1,0 +1,141 @@
+{
+    "users":[
+        {
+            "userId": 1,
+            "username": "admin",
+            "password": "admin"
+        }       
+    ],
+    "categories": [
+        {
+            "categoryId": 1,
+            "name": "Geography"
+        },
+        {
+            "categoryId": 2,
+            "name": "History"
+        },
+        {
+            "categoryId": 3,
+            "name": "Science"
+        },
+        {
+            "categoryId": 4,
+            "name": "Sports"
+        }
+    ],
+    "quiz": [
+        {
+            "questionId": 1,
+            "categoryId": 1,
+            "question": "What is the capital of France?",
+            "answers": ["Paris", "Lyon", "Marseille", "Toulouse"],
+            "correctanswer": "Paris"
+        },
+        {
+            "questionId": 2,
+            "categoryId": 1,
+            "question": "What is the capital of Spain?",
+            "answers": ["Madrid", "Barcelona", "Valencia", "Seville"],
+            "correctanswer": "Madrid"
+        },
+        {
+            "questionId": 3,
+            "categoryId": 1,
+            "question": "What is the capital of Italy?",
+            "answers": ["Turin", "Milan", "Naples", "Rome"],
+            "correctanswer": "Rome"
+        },
+        {
+            "questionId": 4,
+            "categoryId": 1,
+            "question": "What is the capital of Germany?",
+            "answers": ["Berlin", "Hamburg", "Munich", "Cologne"],
+            "correctanswer": "Berlin"
+        },
+        {
+            "questionId": 5,
+            "categoryId": 2,
+            "question": "What year did World War II end?",
+            "answers": ["1945", "1944", "1943", "1942"],
+            "correctanswer": "1945"
+        },
+        {
+            "questionId": 6,
+            "categoryId": 2,
+            "question": "What year did World War I end?",
+            "answers": ["1918", "1917", "1916", "1915"],
+            "correctanswer": "1918"
+        },
+        {
+            "questionId": 7,
+            "categoryId": 2,
+            "question": "What year did the Cold War end?",
+            "answers": ["1991", "1990", "1989", "1988"],
+            "correctanswer": "1991"
+        },
+        {
+            "questionId": 8,
+            "categoryId": 2,
+            "question": "What year did the Vietnam War end?",
+            "answers": ["1975", "1974", "1973", "1972"],
+            "correctanswer": "1975"
+        },
+        {
+            "questionId": 9,
+            "categoryId": 3,
+            "question": "What is the largest planet in our solar system?",
+            "answers": ["Jupiter", "Saturn", "Neptune", "Earth"],
+            "correctanswer": "Jupiter"
+        },
+        {
+            "questionId": 10,
+            "categoryId": 3,
+            "question": "What is the smallest planet in our solar system?",
+            "answers": ["Mercury", "Mars", "Venus", "Earth"],
+            "correctanswer": "Mercury"
+        },
+        {
+            "questionId": 11,
+            "categoryId": 3,
+            "question": "What is the hottest planet in our solar system?",
+            "answers": ["Venus", "Mercury", "Earth", "Mars"],
+            "correctanswer": "Venus"
+        },
+        {
+            "questionId": 12,
+            "categoryId": 3,
+            "question": "What is the coldest planet in our solar system?",
+            "answers": ["Neptune", "Uranus", "Saturn", "Jupiter"],
+            "correctanswer": "Neptune"
+        },
+        {
+            "questionId": 13,
+            "categoryId": 4,
+            "question": "What is the most popular sport in the world?",
+            "answers": ["Soccer", "Cricket", "Basketball", "Tennis"],
+            "correctanswer": "Soccer"
+        },
+        {
+            "questionId": 14,
+            "categoryId": 4,
+            "question": "What is the most popular sport in the United States?",
+            "answers": ["Football", "Baseball", "Basketball", "Soccer"],
+            "correctanswer": "Football"
+        },
+        {
+            "questionId": 15,
+            "categoryId": 4,
+            "question": "What is the most popular sport in Canada?",
+            "answers": ["Hockey", "Football", "Baseball", "Basketball"],
+            "correctanswer": "Hockey"
+        },
+        {
+            "questionId": 16,
+            "categoryId": 4,
+            "question": "What is the most popular sport in Australia?",
+            "answers": ["Cricket", "Rugby", "Soccer", "Basketball"],
+            "correctanswer": "Cricket"
+        }
+    ]
+}
