@@ -10,10 +10,9 @@
     </div>
     <div *ngIf="isUserConnected">
         <h2>{{ getUsername }}</h2>
-        <button class="custom-btn is-right" (click)="logout()" routerLink="/login">Log out</button>
+        <button class="custom-btn is-right" (click)="logout()" routerLink="/home">Log out</button>
     </div>
     <div *ngIf="!isUserConnected">
-        <h2>{{ getUsername }}</h2>
         <button class="custom-btn is-right" routerLink="/log-in">Log In</button>
     </div>
 </header>

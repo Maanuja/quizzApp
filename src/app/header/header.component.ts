@@ -10,7 +10,8 @@ export class HeaderComponent {
   title:string = 'Quizz App';
   description:string = 'This is a simple quiz app made with Angular 8';
   
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService) {
+  }
 
   logout() {
     this.authService.logout();
@@ -23,5 +24,4 @@ export class HeaderComponent {
   get getUsername() {
     return this.authService.user?.username || '';
   }
-
 }

@@ -13,22 +13,26 @@ export class HomeComponent {
   playerName!: string;
   disablePseudo = true;
 
+  get isUserConnected() {
+    return this.authService.isUserConnected();
+  }
+  get player() {
+    return this.authService.user?.username || '';
+  }
+
   form = new FormGroup({
     pseudo: new FormControl('', Validators.required),
   });
 
-  constructor( private quizService: QuizzService,  private authService: AuthService, private router: Router) {}
+  constructor( private quizService: QuizzService,  private authService: AuthService, private router: Router) {
+    this.playerName = this.authService.user?.username || '';
+  }
 
   ngOnInit(): void {
     //Nous verrons plus tard comment gérer cela avec des observables
-    this.authService.isUserConnected();
-    if(this.authService.isUserConnected()){
-      this.disablePseudo = false;
-    }
-    if (this.authService.user){
-      // console.log('Connected user', this.authService.user);
-    }
-    this.playerName = this.authService.user?.username || '';
+    console.log('isUserConnected', this.isUserConnected);
+    console.log(this.authService);
+    // this.playerName = this.authService.user?.username || '';
   }
 
   onPseudoInput(event:any) {
@@ -49,6 +53,5 @@ export class HomeComponent {
     // console.log('connected user name', this.quizService.playerName);
     this.router.navigate(['/categories']);
   }
-
 }
 

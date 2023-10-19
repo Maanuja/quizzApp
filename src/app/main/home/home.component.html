@@ -1,14 +1,19 @@
 <div class="content">
-    <form class="form-style" [formGroup]="form" (ngSubmit)="onSubmit()"  *ngIf="!playerName.length || disablePseudo">
-        <input type="text" class="pseudo-input" placeholder="Entre pseudo" onkeypress="" formControlName="pseudo" (input)="onPseudoInput($event)"/>
-        <button mat-icon-button class="text-color revert-btn"  aria-label="play btn" type="submit" [disabled]="disablePseudo">
+    <div *ngIf="!isUserConnected">
+        <form class="form-style" [formGroup]="form" (ngSubmit)="onSubmit()"  *ngIf="!playerName.length || disablePseudo">
+            <input type="text" class="pseudo-input" placeholder="Entre pseudo" onkeypress="" formControlName="pseudo" (input)="onPseudoInput($event)"/>
+            <button mat-icon-button class="text-color revert-btn"  aria-label="play btn" type="submit" [disabled]="disablePseudo">
+                <mat-icon class="icon-size">play_circle_filled</mat-icon>
+            </button>
+        </form>
+        <p class="text-color">Log In to save you score ^^ <button class="custom-btn" routerLink="/log-in">Sign In</button></p>
+        
+        <p class="text-color">Don't Have an Account? <a routerLink="/sign-up" class="text-color bold">Sign Up</a></p>
+    </div>
+    <div *ngIf="isUserConnected">
+        <h1 class="text-color bold is-left">Welcome {{playerName}}</h1>
+        <button mat-icon-button class="text-color revert-btn"  aria-label="play btn" type="submit" (click)="navigateToCategories()">
             <mat-icon class="icon-size">play_circle_filled</mat-icon>
         </button>
-    </form>
-    <button mat-icon-button class="text-color revert-btn"  aria-label="play btn" type="submit" *ngIf="playerName.length" (click)="navigateToCategories()">
-        <mat-icon class="icon-size">play_circle_filled</mat-icon>
-    </button>
-    <p class="text-color">Log In to save you score ^^ <button class="custom-btn" routerLink="/log-in">Sign In</button></p>
-    
-    <p class="text-color">Don't Have an Account? <a routerLink="/sign-up" class="text-color bold">Sign Up</a></p>
+    </div>
 </div>
